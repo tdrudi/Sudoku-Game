@@ -11,5 +11,7 @@ int main()
     cout << "==========================\n"
          << endl;
 
-        return 0;
+    Game playSudoku;
+
+    return 0;
 }

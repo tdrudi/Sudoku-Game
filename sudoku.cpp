@@ -56,8 +56,16 @@ void Sudoku::Print_Board(ostream &os)
             // Put a '.' in empty boxes or the value in filled boxes
             if (board[r][c] == 0)
                 os << ". ";
-            else
+            else if (isOriginal[r][c])
+            {
+                // Pre-filled box - normal color
                 os << board[r][c] << " ";
+            }
+            else
+            {
+                // User Input values - cyan
+                os << "\033[36m" << board[r][c] << "\033[0m" << " ";
+            }
 
             if ((c + 1) % 3 == 0)
                 os << "| ";
